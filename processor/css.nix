@@ -6,7 +6,7 @@ let
       (builtins.attrValues
         (builtins.mapAttrs mkProp props))} }'';
 
-  mkStyle = style: builtins.concatStringsSep "\n"
+  mkStyle = style: builtins.concatStringsSep ""
     (builtins.attrValues
       (builtins.mapAttrs
         mkSelector

@@ -9,7 +9,7 @@ let
     };
 
   mkStyles = styles:
-    builtins.concatStringsSep "\n"
+    builtins.concatStringsSep ""
       (map (s: ''
         <style> ${css.mkStyle s} </style>
       '') styles);

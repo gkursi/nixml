@@ -18,7 +18,7 @@ let
                   then "</${element.tag}>"
                   else "";
       in
-      builtins.trace element "<${element.tag}${params}>\n${content}${closing}";
+      builtins.trace element "<${element.tag}${params}>${content}${closing}";
   };
 in
 self
