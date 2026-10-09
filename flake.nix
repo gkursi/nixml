@@ -13,7 +13,7 @@
               name = path;
               path = pkgs.writeText
                   (pkgs.lib.strings.sanitizeDerivationName path)
-                  (processor.html.mkPage content);
+                  (processor.page.mkPage content);
             })
             site
         );
