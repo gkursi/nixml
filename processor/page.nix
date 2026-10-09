@@ -1,4 +1,6 @@
 let
+  css = import ./css.nix;
+
   mkBody = content:
     (import ./html.nix).mkElement {
       tag = "body";
@@ -9,7 +11,7 @@ let
   mkStyles = styles:
     builtins.concatStringsSep "\n"
       (map (s: ''
-        <style> ${(import ./css.nix) s} </style>
+        <style> ${css.mkStyle s} </style>
       '') styles);
 
   mkHead = page: ''
