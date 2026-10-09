@@ -22,6 +22,22 @@ let
     p = content: el "p" content;
     pl = content: literal "p" content;
 
+    a = url: content: [{
+      inherit content;
+      tag = "a";
+      params = {
+        href = url;
+      };
+    }];
+
+    al = url: contentLiteral: [{
+      inherit contentLiteral;
+      tag = "a";
+      params = {
+        href = url;
+      };
+    }];
+
     div = class: content: [{
       inherit content;
       tag = "div";
