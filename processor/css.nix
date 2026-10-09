@@ -2,9 +2,9 @@ let
   mkProp = prop: value: "${prop}:${value};";
 
   mkSelector = sel: props:
-    "${sel} { ${builtins.concatStringsSep ""
+    "${sel}{${builtins.concatStringsSep ""
       (builtins.attrValues
-        (builtins.mapAttrs mkProp props))} }";
+        (builtins.mapAttrs mkProp props))}}";
 
   mkStyle = style: builtins.concatStringsSep ""
     (builtins.attrValues
